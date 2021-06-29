@@ -1,19 +1,5 @@
 ---
-Parameters:
-  EC2InstanceType:
-    Description: The Instance Type Chosen for EC2
-    Type: String
-    
 Resources:
-  TekLoonTestInstance:
-    Type: AWS::EC2::Instance
-    Properties:
-      AvailabilityZone: ap-southeast-1a
-      ImageId: ami-02f26adf094f51167
-      InstanceType: !Ref EC2InstanceType
-      SecurityGroups:
-        - !Ref HTTPSecurityGroup
-
   HTTPSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
