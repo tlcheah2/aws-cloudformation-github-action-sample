@@ -14,6 +14,15 @@ Resources:
       SecurityGroups:
         - !Ref HTTPSecurityGroup
 
+  GithubActionTestInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: ap-southeast-1a
+      ImageId: ami-02f26adf094f51167
+      InstanceType: !Ref EC2InstanceType
+      SecurityGroups:
+        - !Ref HTTPSecurityGroup
+
   HTTPSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
