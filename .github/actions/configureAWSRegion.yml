@@ -1,0 +1,10 @@
+name: "Configure AWS Region"
+description: "Receives AWS Region and output it"
+inputs:
+  region:
+    description: 'AWS Region to Deploy'
+    required: true
+    default: 'ap-southeast-1'
+outputs:
+  region: # id of output
+    description: "AWS Region to deployed"

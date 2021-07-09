@@ -9,6 +9,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+
 jobs:
   # This workflow contains a single job called "deploy"
   deploy:
@@ -19,6 +20,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code from master branch
         uses: actions/checkout@v2
+
+      # Set AWS Region
+      - name: Set AWS Region
+        uses: ./.github/actions/configureAWSRegion.yml
 
       # Configure AWS Credential
       - name: Configure AWS Credentials
