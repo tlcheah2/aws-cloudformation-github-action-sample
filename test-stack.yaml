@@ -1,8 +1,10 @@
 ---
 Mappings:
   RegionEC2InstanceImageMap:
-    us-east-2: ami-0233c2d874b811deb
-    ap-southeast-1: ami-0e5182fad1edfaa68
+    us-east-2: 
+      HVM64: "ami-0233c2d874b811deb"
+    ap-southeast-1: 
+      HVM64: "ami-0e5182fad1edfaa68"
 
 Parameters:
   EC2InstanceType:
@@ -17,6 +19,7 @@ Resources:
       ImageId: !FindInMap
         - RegionEC2InstanceImageMap
         - !Ref 'AWS::Region'
+        - HVM64
       InstanceType: !Ref EC2InstanceType
       SecurityGroups:
         - !Ref HTTPSecurityGroup
