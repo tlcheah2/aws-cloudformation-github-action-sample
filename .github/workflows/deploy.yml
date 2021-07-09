@@ -1,13 +1,18 @@
 name: 'Deploy to AWS CloudFormation'
 
 on: 
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      region:
+        description: 'AWS Region to deploy to'
+        required: true
+        default: 'ap-southeast-1'
 
 
 jobs:
@@ -20,10 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code from master branch
         uses: actions/checkout@v2
-
-      # Set AWS Region
-      - name: Set AWS Region
-        uses: ./.github/actions/configureAWSRegion.yml
 
       # Configure AWS Credential
       - name: Configure AWS Credentials
