@@ -1,6 +1,6 @@
 name: 'Deploy to AWS CloudFormation'
 
-on: 
+on:
   # push:
   #   branches: [ master ]
   # pull_request:
@@ -12,7 +12,7 @@ on:
       region:
         description: 'AWS Region to deploy to'
         required: true
-        default: 'ap-southeast-1'
+        default: 'us-east-1'
 
 
 jobs:
@@ -42,4 +42,3 @@ jobs:
           template: test-stack.yaml
           no-fail-on-empty-changeset: "1"
           parameter-overrides: "EC2InstanceType=t2.micro"
-  

@@ -4,7 +4,7 @@ inputs:
   region:
     description: 'AWS Region to Deploy'
     required: true
-    default: 'ap-southeast-1'
+    default: 'us-east-1'
 outputs:
   region: # id of output
     description: "AWS Region to deployed"
