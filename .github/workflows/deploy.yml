@@ -1,5 +1,13 @@
 name: 'Deploy to AWS CloudFormation'
 
+# .pre-commit-config.yaml
+repos:
+-   repo: https://github.com/awslabs/cfn-python-lint
+    rev: v0.15.0 # The version of cfn-lint to use
+    hooks:
+    -   id: cfn-python-lint
+        files: templates/.*\.(json|yml|yaml)$
+
 on: 
   # push:
   #   branches: [ master ]
